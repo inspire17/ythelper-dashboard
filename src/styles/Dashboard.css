@@ -1,0 +1,411 @@
+/* Dashboard Container with 3D Effect */
+.dashboard-container {
+  font-family: Arial, sans-serif;
+  padding: 1.25em;
+  background-color: #f4f5f7;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 0.5em;
+  box-shadow:
+    5px 5px 15px rgba(0, 0, 0, 0.3),
+    -5px -5px 15px rgba(255, 255, 255, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.dashboard-container:hover {
+  box-shadow:
+    8px 8px 20px rgba(0, 0, 0, 0.4),
+    -8px -8px 20px rgba(255, 255, 255, 0.3);
+}
+
+/* Top Bar */
+.top-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5em;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0em 0.25em 0.375em rgba(0, 0, 0, 0.1);
+  margin-bottom: 1em;
+}
+
+/* Filter Toggle Button */
+.filter-toggle {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  align-items: center;
+  border: 1px solid #ccc;
+  border-radius: 0.3125em;
+  padding: 0.3em 0.5em;
+  background-color: white;
+  flex-grow: 0.6;
+  margin: 0 1em;
+  min-width: 200px;
+  max-height: 40px;
+  position: relative;
+}
+
+.search-icon {
+  color: #555;
+  margin-right: 0.3em;
+}
+
+.search-bar {
+  border: none;
+  outline: none;
+  flex-grow: 1;
+  width: 100%;
+}
+
+.clear-search {
+  background: none;
+  border: none;
+  font-size: 1em;
+  color: #d73a49;
+  cursor: pointer;
+  position: absolute;
+  right: 0.5em;
+}
+
+.clear-search:hover {
+  color: #a12734;
+}
+
+/* Upload Button */
+.upload-button {
+  background: none;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  color: #0052cc;
+}
+
+.upload-button:hover {
+  color: #003c9e;
+}
+
+/* Filter Window */
+.filter-window {
+  position: absolute;
+  top: 3.5em;
+  left: 1em;
+  background-color: white;
+  padding: 1.5em;
+  border-radius: 0.5em;
+  box-shadow:
+    5px 5px 15px rgba(0, 0, 0, 0.3),
+    -5px -5px 15px rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 300px;
+  max-width: 90%;
+  z-index: 100;
+  transition: all 0.3s ease-in-out;
+}
+
+.filter-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 1.2em;
+  font-weight: bold;
+  margin-bottom: 0.5em;
+  padding-bottom: 0.5em;
+  border-bottom: 1px solid #ccc;
+}
+
+.filter-title {
+  text-align: left;
+  flex-grow: 1;
+}
+
+.filter-controls {
+  display: flex;
+  gap: 0.5em;
+}
+
+.filter-refresh {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #007bff;
+}
+
+.filter-refresh:hover {
+  color: #0056b3;
+}
+
+.filter-close {
+  background: none;
+  border: none;
+  font-size: 1.2em;
+  cursor: pointer;
+  color: #d73a49;
+}
+
+.filter-close:hover {
+  color: #a12734;
+}
+
+/* Kanban Board */
+.kanban-board {
+  display: flex;
+  flex-wrap: nowrap;
+  width: 100%;
+  max-width: 80em;
+  gap: 1em;
+  overflow-x: auto;
+  padding: 1em 0;
+}
+
+/* Kanban Column */
+.kanban-column {
+  flex: 1;
+  min-width: 23em;
+  background-color: #ffffff;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0em 0.25em 0.375em rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 0.625em;
+}
+
+.kanban-header {
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  background-color: #0747a6;
+  color: white;
+  padding: 0.5em;
+  border-radius: 0.3125em;
+  cursor: pointer;
+}
+
+.kanban-column.collapsed {
+  display: none;
+}
+
+/* Video Thumbnail Styling */
+.video-thumbnail {
+  width: 100px; /* Adjust width as needed */
+  height: 60px; /* Adjust height as needed */
+  object-fit: cover;
+  border-radius: 5px;
+  box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Video List Item Styling */
+.video-list-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease-in-out;
+  position: relative;
+}
+
+.video-list-item:hover {
+  transform: scale(1.02);
+}
+
+.video-title {
+  font-size: 0.9em;
+  font-weight: bold;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  flex-grow: 1;
+  position: relative;
+}
+/* 
+.video-title:hover {
+    overflow: visible;
+    white-space: normal;
+    background: rgba(37, 37, 37, 0.8);
+    color: white;
+    padding: 5px;
+    border-radius: 4px;
+    position: absolute;
+    z-index: 10;
+    max-width: 250px;
+} */
+
+.status-tag {
+  font-size: 0.75em;
+  font-weight: bold;
+  padding: 0.3125em 0.625em;
+  border-radius: 0.9375em;
+  color: white;
+  display: inline-block;
+  width: 120px;
+  text-align: center;
+}
+
+.status-tag.todo {
+  background-color: #ffcc00;
+}
+.status-tag.in-progress {
+  background-color: #ff6600;
+}
+.status-tag.in-review {
+  background-color: #ff3333;
+}
+.status-tag.approved {
+  background-color: #00cc66;
+}
+.status-tag.exported {
+  background-color: #0099cc;
+}
+
+.assignee {
+  font-size: 0.875em;
+  color: #555;
+  white-space: nowrap;
+  text-align: right;
+}
+
+/* Settings Icon */
+.settings-icon {
+  position: fixed;
+  bottom: 1.5em;
+  right: 1.5em;
+  background: #ffffff;
+  border: none;
+  font-size: 1.5em;
+  cursor: pointer;
+  padding: 0.5em;
+  border-radius: 50%;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  transition: transform 0.2s ease-in-out;
+}
+
+.settings-icon:hover {
+  transform: scale(1.1);
+  background: #f4f5f7;
+}
+
+/* Settings Menu */
+.settings-menu {
+  position: fixed;
+  bottom: 4em;
+  right: 1.5em;
+  background: #ffffff;
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+  width: 200px;
+  z-index: 100;
+}
+
+.settings-menu p {
+  margin: 0;
+  padding: 0.5em 0;
+  font-size: 0.9em;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.settings-menu p:hover {
+  background: #f4f5f7;
+  border-radius: 0.3em;
+}
+
+.theme-toggle {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5em 0;
+}
+
+.theme-toggle button {
+  background: none;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  padding: 0.3em;
+  display: flex;
+  align-items: center;
+  gap: 0.5em;
+}
+
+.theme-toggle button:hover {
+  color: #0052cc;
+}
+
+.logout {
+  color: #d73a49;
+  font-weight: bold;
+}
+
+.logout:hover {
+  color: #a12734;
+}
+
+/* CSS Styling */
+.video-modal {
+  position: fixed;
+  top: 20%;
+  left: 20%;
+  transform: translate(-10%, -20%);
+  background: white;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  max-width: 90vw;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.video-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-close-button {
+  position: absolute;
+  top: 1%;
+  right: 1%;
+  background: transparent;
+  border: none;
+  font-size: 1em;
+  cursor: pointer;
+  color: #333;
+}
+.modal-close-button:hover {
+  color: red;
+}
+
+.video-player {
+  width: 100%;
+  max-width: 800px;
+  max-height: 450px;
+  border-radius: 6px;
+}
+
+.model-video-player {
+  padding-top: 3%;
+}

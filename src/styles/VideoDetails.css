@@ -1,0 +1,100 @@
+.video-details-container {
+  width: 90%;
+  max-width: 600px;
+  margin: auto;
+  padding: 20px;
+  background: #f9f9f9;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.video-player {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 50vh;
+  overflow: hidden;
+}
+
+/* Default horizontal video style */
+.video-player .horizontal-video {
+  width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  background: black;
+  border-radius: 5px;
+}
+
+/* Vertical video specific styles */
+.video-player .vertical-video {
+  width: 40%; /* Adjust width for better fit */
+  max-height: 80vh;
+  object-fit: contain;
+  background: black;
+  border-radius: 5px;
+}
+
+.video-info {
+  display: flex;
+  flex-direction: column;
+  margin-top: 15px;
+}
+
+.video-info label {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.video-info input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
+
+.instructions-section,
+.comments-section {
+  margin-top: 20px;
+}
+
+.instructions-section h3,
+.comments-section h3 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 5px;
+}
+
+.instruction-item,
+.comment-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+  background: #fff;
+  margin-top: 8px;
+  border-radius: 5px;
+}
+
+button {
+  background: #007bff;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #0056b3;
+}
+
+.video-info-container {
+  margin-top: 20%;
+}
+
+.desciption_textarea {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background: #fff;
+}
